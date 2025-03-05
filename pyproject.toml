@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "exercise2"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.13"
+rich = ">=13.9.4,<14.0.0"
+requests = ">=2.32.3,<3.0.0"
+python-dotenv = ">=1.0.1,<2.0.0"
+openai = ">=1.65.3,<2.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
