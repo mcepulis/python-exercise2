@@ -7,9 +7,8 @@ from rich import print
 load_dotenv()
 
 class CalendarEvent(BaseModel):
-    name: str
-    date: str
-    participants: list[str]
+    color: list[str]
+    action: str
 
 client = OpenAI(
     base_url="https://models.inference.ai.azure.com",
@@ -18,8 +17,8 @@ client = OpenAI(
 
 response = client.beta.chat.completions.parse(
     messages=[
-        {"role": "system", "content": "Extract the event information."},
-        {"role": "user", "content": "Alice and Bob are going to a science fair on Friday."},
+        # {"role": "system", "content": "provide color and action from content"},
+        {"role": "user", "content": "We are moving from black bridge to white"},
     ],
     response_format=CalendarEvent,
     model="gpt-4o",
